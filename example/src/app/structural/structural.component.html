@@ -1,0 +1,19 @@
+<ng-container *ngIf="users; then userfound else usernotfound">
+    user is true
+</ng-container>
+
+
+<div>hello</div>
+<ng-template #userfound>
+    <div *ngFor="let user of users">
+        <div [ngSwitch]="user.gender">
+            <div style="color: red;" *ngSwitchCase="'m'">{{user.name}}</div>
+            <div style="color:  blue;" *ngSwitchCase="'f'">{{user.name}}</div>
+            <div *ngSwitchDefault>{{user.name}}</div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #usernotfound>
+    no user found
+</ng-template>

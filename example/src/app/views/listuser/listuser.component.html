@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">S.no</th>
+            <th scope="col">UserName</th>
+            <th scope="col">E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngIf="user_profile let userindex = index">
+            <th scope="row">1</th>
+            <td>{{user_profile.username}}</td>
+            <td>{{user_profile.email}}</td>
+        </tr>
+
+    </tbody>
+</table>

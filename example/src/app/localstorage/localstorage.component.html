@@ -1,0 +1,17 @@
+
+<label for="">Name</label>
+<input type="text"  #name>
+<br><br>
+<label for="">Password</label>
+<input type="text" #password>
+<br><br>
+<button (click)="disPlay(name.value,password.value)">submit</button>
+<button (click)="view()">view</button>
+
+
+<div *ngFor="let detail of main">
+<h1>{{detail.username}}</h1>
+<h2>{{detail.password}}</h2>
+</div>
+
+

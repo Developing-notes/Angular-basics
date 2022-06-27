@@ -1,0 +1,11 @@
+<!-- input_method -->
+<!-- <app-child [list]="currentitem"></app-child> -->
+
+
+<!-- output_method -->
+<app-child (newItemEvent)="addItem($event)"></app-child>
+
+<ul>
+ <li *ngFor="let item of product">{{item}}</li>
+</ul>
+

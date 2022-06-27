@@ -1,0 +1,22 @@
+<button class="btn btn-warning" type="submit" (click)="getUser()">
+    Userlists
+</button>
+<!-- {{arr | json}} -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">S.no</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">UserName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of arr; let userindex = index">
+            <th scope="row">{{ userindex + 1 }}</th>
+            <td>{{ user.email }}</td>
+            <td>{{ user.username }}</td>
+            <td><button (click)="viewProfile(user._id)">view</button></td>
+
+        </tr>
+    </tbody>
+</table>

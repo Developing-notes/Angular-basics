@@ -1,0 +1,56 @@
+<!-- date_method -->
+<div>
+    Date: {{day| date:"M/d/yy, h:mm a "}}
+</div>
+
+<!-- number_method -->
+<div>
+    Number: {{num|number:"5.2-4"}}
+</div>
+
+<!-- percentage_method -->
+<div>
+    Pecentage: {{percentage | percent}}
+</div>
+
+<!-- currency_method -->
+<div>
+    Currency: {{amount|currency:'INR' :'symbol':"7.2-4"}}
+</div>
+
+<!-- uppercase_method -->
+<div>
+    Uppercase: {{content|uppercase}}
+</div>
+
+<!-- lowercase_method -->
+<div>
+    Lowercase: {{content|lowercase}}
+</div>
+
+<!-- titlecase_method -->
+<div>
+    Titlecase: {{content|titlecase}}
+</div>
+
+<!-- object_convertinjson_method -->
+<div>
+   Json: {{details|json}}
+</div>
+
+<!-- slice_method -->
+<div>
+   Slice: {{arr|slice:1:3}}
+</div>
+
+<!-- keyvaluepair_method -->
+
+<div>
+   Keyvaluepair: {{details|keyvalue|json }}
+</div>
+
+<!-- custompipe_method -->
+
+<div>
+   Custompipe: {{2|pipe}}
+</div>

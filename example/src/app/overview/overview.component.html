@@ -1,0 +1,12 @@
+<h2>{{content}}</h2>
+<!-- onewaybinding -->
+<p [textContent]="title"></p>
+
+<!-- twowaybinding -->
+<input [(ngModel)]="data"  type="text">
+<p>{{data}}</p>
+
+<!-- materialdesign -->
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+<button (click)="getHome()">getpage</button>

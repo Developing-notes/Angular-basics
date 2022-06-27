@@ -1,0 +1,11 @@
+<!-- input_method -->
+<p>
+  <!-- interpolation -->
+  Today's item: {{ list }}
+</p>
+
+<!-- output_method -->
+<label for="">add item</label>
+<input type="text" #newItem/>
+<button type="button" class="btn btn-primary" 
+(click)="addList(newItem.value)">add product</button>

@@ -1,0 +1,58 @@
+<form name="form" #login="ngForm">
+  <div class="form-group">
+    <label>Username </label>
+    <input type="text" class="form-control" name="username" [(ngModel)]="userObj.username" #username="ngModel"
+      required />
+    <span class="text-danger" *ngIf="(username.touched || login.submitted) && username.errors?.required">
+      Username is required!
+    </span>
+
+    <div class="form-group">
+      <label>E-Mail</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="userObj.email" #email="ngModel"
+        [pattern]="generalService.pattern.email" required />
+      <span class="text-danger" *ngIf="(email.touched || login.submitted) && email.errors?.required">
+        E-mail is required!
+      </span>
+      <span class="text-danger" *ngIf="email.errors?.pattern">This is not a valid Email!</span>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" name="password" [(ngModel)]="userObj.password" #password="ngModel"
+        [pattern]="generalService.pattern.password" required />
+      <span class="text-danger" *ngIf="password.errors?.pattern">This is not a valid Password!</span>
+      <span class="text-danger" *ngIf="
+          (password.touched || login.submitted) && password.errors?.required
+        ">
+        password is required!
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" [(ngModel)]="userObj.confirm_password" name="confirmpassword" #confirm_password="ngModel"
+        class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+      <div *ngIf=" confirm_password.invalid && (confirm_password.touched|| login.submitted )">
+        <div class="text-danger" *ngIf="confirm_password.errors.required"> Confirm password is required. </div>
+        <div class="text-danger" *ngIf="confirm_password.errors?.pattern"> Password & Confirm Password does not match.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" (click)="onSubmit()">
+        Register
+
+      </button>
+    </div>
+  </div>
+
+  <!-- <h1>{{content|uppercase}}</h1> -->
+
+
+
+  <!-- <span *ngFor="let item of ['a','b','c','d'];let itemIndex=index">
+    content{{itemIndex}}
+  </span> -->
+</form>
